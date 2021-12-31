@@ -1,11 +1,13 @@
+// creating a promise
 const loginPromise = new Promise((success, failure) => {
-    if (false) {
+    if (true) {
         success("It worked")
     } else {
         failure("It is rejected")
     }
 })
 
+// calling a promise with .then
 loginPromise
 .then(result => result + " successfully")
 .then(result2 => {
@@ -14,15 +16,17 @@ loginPromise
     console.log(loginError)
 })
 
-// Async await
-async function login() {
+// Calling a promise with Async await
+const login = async() => {
     try {
-        result = await loginPromise() + "successfully"
-        document.getElementById("title").innerHTML = result
+        result = await loginPromise()
+        return result + "successfully"
     } catch(error) {
         console.log(error)
     }
 }
 
-login()
-
+// calling async function
+login().then(result => {
+    document.getElementById("title").innerHTML = result
+})
