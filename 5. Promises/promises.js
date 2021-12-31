@@ -30,3 +30,6 @@ const login = async() => {
 login().then(result => {
     document.getElementById("title").innerHTML = result
 })
+
+// Call an api with async await
+const 
