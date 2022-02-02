@@ -5,9 +5,11 @@ class Person {
     }
 
     speak() {
-        console.log(`Hello my name is ${this.name} and age is ${this.age}`);
+        const output = `Hello my name is ${this.name} and age is ${this.age}.`;
+        console.log(output)
+        return output
     }
 }
 
 const p1 = new Person("Ashish", 30);
-p1.speak()
+document.getElementById("subtitle").innerHTML = p1.speak()
